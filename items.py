@@ -32,7 +32,10 @@ class Item:
 
             return self._name.title()
 
-        def set_custom_jewelery(self, chosen_metal='', chosen_type_of_jewelery='', chosen_gem=None):
+        def set_custom_jewelery(self):
+            chosen_metal = str(input(f'Select a metal: '))
+            chosen_type_of_jewelery = str(input(f'Select a type of jewelery: '))
+            chosen_gem = str(input(f'Select a gem: '))
             if chosen_metal in jewelery_library.metals:
                 pass
             else:
@@ -59,6 +62,9 @@ class Item:
                 print(f'Valid gems:\n{valid_gems.title()}')
                 return
 
+            return self._name.title()
+
+        def get_jewelery_name(self):
             return self._name.title()
 
     class Armor:
