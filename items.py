@@ -70,3 +70,11 @@ class Item:
     class Armor:
         def __init__(self):
             pass
+
+    class Food:
+        def __init__(self):
+            pass
+
+    class Weapon:
+        def __init__(self):
+            pass
