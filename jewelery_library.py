@@ -1,4 +1,4 @@
-type_of_jewelery = {'ring', 'necklace', 'earring'}
+type_of_jewelery = {'ring', 'necklace', 'earring', 'bracelet'}
 
 gems = {'sapphire', 'ruby', 'emerald', 'diamond', 'amethyst', 'opal', 'quartz', ''}
 

@@ -1,31 +1,42 @@
-import jewelery_library
+# import random
+jump = '\n'
+types_of_armor = ['armor.headgear','armor.chestgear','armor.legs','armor.gloves','armor.boots','armor.shields']
 
 
-def set_custom_jewelery(self, chosen_metal='', chosen_type_of_jewelery='', chosen_gem=None):
-    if chosen_metal in jewelery_library.metals:
+'''def set_random_melee_weapon(self, melee_type=None):
+    melee_metal = random.choice(weapons.metals)
+    if melee_type is None:
+        melee_type = random.choice(weapons.melee_types)
+    elif melee_type.lower() in weapons.melee_types:
+        pass
+    else:
+        print('\nInvalid type of weapon')
+        valid_weapons = ' \n'.join(str(types) for types in weapons.melee_types)
+        print(f'Valid types:\n{valid_weapons.title()}')
+        return
+
+    self.__name = str(f'{melee_metal} {melee_type}')
+    return self.__name
+
+
+def set_custom_melee_weapon(self):
+    melee_metal = str(input(f'Select a metal: '))
+    melee_type = str(input(f'Select a melee weapon: '))
+    if melee_metal.lower() in weapons.metals:
         pass
     else:
         print('\nInvalid metal component')
-        valid_metals = ' \n'.join(str(metals) for metals in jewelery_library.metals)
+        valid_metals = ' \n'.join(str(metals) for metals in weapons.metals)
         print(f'Valid metal components:\n{valid_metals.title()}')
         return
 
-    if chosen_type_of_jewelery in jewelery_library.type_of_jewelery:
+    if melee_type.lower() in weapons.melee_types:
         pass
     else:
-        print('\nInvalid type of jewelery')
-        valid_types_of_jewelery = ' \n'.join(str(types) for types in jewelery_library.type_of_jewelery)
-        print(f'Valid types:\n{valid_types_of_jewelery.title()}')
+        print('\nInvalid type of ammo')
+        valid_weapons = ' \n'.join(str(types) for types in weapons.melee_types)
+        print(f'Valid types:\n{valid_weapons.title()}')
         return
 
-    if chosen_gem is None:
-        self._name = str(f'{chosen_metal} {chosen_type_of_jewelery}')
-    elif chosen_gem in jewelery_library.gems:
-        self._name = str(f'{chosen_metal} {chosen_gem} {chosen_type_of_jewelery}')
-    else:
-        print('\nInvalid type of gem')
-        valid_gems = ' \n'.join(str(gem) for gem in jewelery_library.gems)
-        print(f'Valid gems:\n{valid_gems.title()}')
-        return
-
-    return self._name.title()
+    self.__name = str(f'{melee_metal} {melee_type}')
+    return self.__name.title()'''

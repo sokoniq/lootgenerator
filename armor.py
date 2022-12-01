@@ -1,19 +1,20 @@
-headgear = ['leather cowl', 'sturdy headband', 'steel helmet', 'iron helmet', 'golden plated helmet', 'titanium helmet']
 
-chestgear = ['leather breastplate', 'steel chainmail', 'iron chainmail',
-             'steel chestplate', 'iron chestplate', 'golden chestplate', 'titanium chestplate']
+melee_materials = ['bronze', 'iron', 'steel', 'golden', 'titanium']
 
-legs = ['studded leather chaps', 'steel platelegs', 'iron platelegs', 'golden platelegs', 'titanium platelegs']
+melee_headgear = ['great helm', 'mail coif']
+melee_chestgear = ['brigandine', 'hauberk']
+melee_legs = ['tassets', 'greaves']
+melee_gloves = ['gauntlets', 'gloves']
+melee_boots = ['plated boots']
 
-gloves = ['leather gloves', 'steel plate gloves', 'iron chainmail gloves', 'golden plated gloves', 'titanium gloves']
+range_materials = ['leather', 'studded leather', 'animal hide']
 
-boots = ['leather boots', 'steel plate boots', 'iron boots', 'golden plated boots', 'titanium boots']
+range_headgear = ['coif', 'hood']
+range_chestgear = ['brigandine', 'armor']
+range_legs = ['chaps', 'legs']
+range_gloves = ['gloves', 'bracers']
+range_boots = ['boots', 'shoes']
 
-shields = ["oak kite shield", "oak round shield", "oak buckler",
-           "maple kite shield", "maple round shield", "maple buckler",
-           "iron birch kite shield", "iron birch round shield", "iron birch buckler",
-           "bronze kite shield", "bronze round shield", "bronze buckler",
-           "iron kite shield", "iron round shield", "iron buckler",
-           "steel kite shield", "steel round shield", "steel buckler",
-           "golden kite shield", "golden round shield", "golden buckler",
-           "titanium kite shield", "titanium round shield", "titanium buckler"]
+shield_materials = ['oak', 'maple', 'iron birch', 'bronze', 'iron', 'steel', 'golden', 'titanium']
+
+shield_types = ["kite shield", "round shield", "buckler"]
