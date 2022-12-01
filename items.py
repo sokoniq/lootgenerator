@@ -7,7 +7,9 @@ import rarity
 import jewelery_library
 import weapons
 import armor
-import food
+
+
+# import food
 
 
 class Item:
@@ -18,7 +20,7 @@ class Item:
 
     class Jewelery:
         def __init__(self, name=None):
-            self._name = name.title()
+            self.__name = name.title()
             self.item_type = 'Jewelery'
 
         def set_random_jewelery(self, jewelery_type=None):  # jewelery_type 0=rings/1=necklaces/2=earrings
@@ -32,9 +34,9 @@ class Item:
                 print('Invalid type of jewelery')
                 return
 
-            self._name = str(f'{chosen_metal} {chosen_gem} {jewelery_type}')
+            self.__name = str(f'{chosen_metal} {chosen_gem} {jewelery_type}')
 
-            return self._name.title()
+            return self.__name.title()
 
         def set_custom_jewelery(self):
             chosen_metal = str(input(f'Select a metal: '))
@@ -57,23 +59,23 @@ class Item:
                 return
 
             if chosen_gem is None:
-                self._name = str(f'{chosen_metal} {chosen_type_of_jewelery}')
+                self.__name = str(f'{chosen_metal} {chosen_type_of_jewelery}')
             elif chosen_gem in jewelery_library.gems:
-                self._name = str(f'{chosen_metal} {chosen_gem} {chosen_type_of_jewelery}')
+                self.__name = str(f'{chosen_metal} {chosen_gem} {chosen_type_of_jewelery}')
             else:
                 print('\nInvalid type of gem')
                 valid_gems = ' \n'.join(str(gem) for gem in jewelery_library.gems)
                 print(f'Valid gems:\n{valid_gems.title()}')
                 return
 
-            return self._name.title()
+            return self.__name.title()
 
         def get_jewelery_name(self):
-            return self._name.title()
+            return self.__name.title()
 
     class Weapon:
         def __init__(self, name=None):
-            self._name = name.title()
+            self.__name = name.title()
 
         class RangedWeapon:
             def __init__(self):
@@ -205,12 +207,257 @@ class Item:
                 self.__name = str(f'{melee_metal} {melee_type}')
                 return self.__name.title()
 
-    class Armor:
+    class MeleeArmor:
         def __init__(self, name=None):
-            self._name = name.title()
-            self.item_type = 'Armor'
+            self.__name = name.title()
+
+        class Head:
+            def __init__(self, name=None):
+                self.__name = name.title()
+                self.item_type = 'head armor'
+
+            def set_random_melee_head_armor(self, armor_type=None):
+                material = random.choice(armor.melee_materials)
+                if armor_type is None:
+                    armor_type = random.choice(armor.melee_headgear)
+                elif armor_type.lower() in armor.melee_headgear:
+                    pass
+                else:
+                    print('\nInvalid type of head armor')
+                    valid_types = ' \n'.join(str(types) for types in armor.melee_headgear)
+                    print(f'Valid types:\n{valid_types}.title()')
+                    return
+
+                self.__name = str(f'{material} {armor_type}')
+                return self.__name
+
+            def set_custom_melee_head_armor(self):
+                material = str(input(f'Select a material: '))
+                armor_type = str(input(f'Select a head armor: '))
+                if material.lower() in armor.melee_materials:
+                    pass
+                else:
+                    print('\nInvalid component')
+                    valid_types = ' \n'.join(str(materials) for materials in armor.melee_materials)
+                    print(f'Valid components:\n{valid_types}.title()')
+                    return
+
+                if armor_type.lower() in armor.melee_headgear:
+                    pass
+                else:
+                    print('\nInvalid type of head armor')
+                    valid_types = ' \n'.join(str(types) for types in armor.melee_headgear)
+                    print(f'Valid types:\n{valid_types}.title()')
+                    return
+                self.__name = str(f'{material} {armor_type}')
+                return self.__name.title()
+
+        class Chest:
+            def __init__(self, name=None):
+                self.__name = name.title()
+                self.item_type = 'chest armor'
+
+            def set_random_melee_chest_armor(self, armor_type=None):
+                material = random.choice(armor.melee_materials)
+                if armor_type is None:
+                    armor_type = random.choice(armor.melee_chestgear)
+                elif armor_type.lower() in armor.melee_chestgear:
+                    pass
+                else:
+                    print('\nInvalid type of chest armor')
+                    valid_types = ' \n'.join(str(types) for types in armor.melee_chestgear)
+                    print(f'Valid types:\n{valid_types}.title()')
+                    return
+
+                self.__name = str(f'{material} {armor_type}')
+                return self.__name
+
+            def set_custom_melee_chest_armor(self):
+                material = str(input(f'Select a material: '))
+                armor_type = str(input(f'Select a chest armor: '))
+                if material.lower() in armor.melee_materials:
+                    pass
+                else:
+                    print('\nInvalid component')
+                    valid_types = ' \n'.join(str(materials) for materials in armor.melee_materials)
+                    print(f'Valid components:\n{valid_types}.title()')
+                    return
+
+                if armor_type.lower() in armor.melee_chestgear:
+                    pass
+                else:
+                    print('\nInvalid type of chest armor')
+                    valid_types = ' \n'.join(str(types) for types in armor.melee_chestgear)
+                    print(f'Valid types:\n{valid_types}.title()')
+                    return
+                self.__name = str(f'{material} {armor_type}')
+                return self.__name.title()
+
+        class Legs:
+            def __init__(self, name=None):
+                self.__name = name.title()
+                self.item_type = 'legs armor'
+
+            def set_random_melee_legs_armor(self, armor_type=None):
+                material = random.choice(armor.melee_materials)
+                if armor_type is None:
+                    armor_type = random.choice(armor.melee_legs)
+                elif armor_type.lower() in armor.melee_legs:
+                    pass
+                else:
+                    print('\nInvalid type of legs armor')
+                    valid_types = ' \n'.join(str(types) for types in armor.melee_legs)
+                    print(f'Valid types:\n{valid_types}.title()')
+                    return
+
+                self.__name = str(f'{material} {armor_type}')
+                return self.__name
+
+            def set_custom_melee_legs_armor(self):
+                material = str(input(f'Select a material: '))
+                armor_type = str(input(f'Select a legs armor: '))
+                if material.lower() in armor.melee_materials:
+                    pass
+                else:
+                    print('\nInvalid component')
+                    valid_types = ' \n'.join(str(materials) for materials in armor.melee_materials)
+                    print(f'Valid components:\n{valid_types}.title()')
+                    return
+
+                if armor_type.lower() in armor.melee_legs:
+                    pass
+                else:
+                    print('\nInvalid type of legs armor')
+                    valid_types = ' \n'.join(str(types) for types in armor.melee_legs)
+                    print(f'Valid types:\n{valid_types}.title()')
+                    return
+                self.__name = str(f'{material} {armor_type}')
+                return self.__name.title()
+
+        class Gloves:
+            def __init__(self, name=None):
+                self.__name = name.title()
+                self.item_type = 'gloves armor'
+
+            def set_random_melee_gloves_armor(self, armor_type=None):
+                material = random.choice(armor.melee_materials)
+                if armor_type is None:
+                    armor_type = random.choice(armor.melee_gloves)
+                elif armor_type.lower() in armor.melee_gloves:
+                    pass
+                else:
+                    print('\nInvalid type of gloves armor')
+                    valid_types = ' \n'.join(str(types) for types in armor.melee_gloves)
+                    print(f'Valid types:\n{valid_types}.title()')
+                    return
+
+                self.__name = str(f'{material} {armor_type}')
+                return self.__name
+
+            def set_custom_melee_gloves_armor(self):
+                material = str(input(f'Select a material: '))
+                armor_type = str(input(f'Select a gloves armor: '))
+                if material.lower() in armor.melee_materials:
+                    pass
+                else:
+                    print('\nInvalid component')
+                    valid_types = ' \n'.join(str(materials) for materials in armor.melee_materials)
+                    print(f'Valid components:\n{valid_types}.title()')
+                    return
+
+                if armor_type.lower() in armor.melee_gloves:
+                    pass
+                else:
+                    print('\nInvalid type of gloves armor')
+                    valid_types = ' \n'.join(str(types) for types in armor.melee_gloves)
+                    print(f'Valid types:\n{valid_types}.title()')
+                    return
+                self.__name = str(f'{material} {armor_type}')
+                return self.__name.title()
+
+        class Boots:
+            def __init__(self, name=None):
+                self.__name = name.title()
+                self.item_type = 'boots armor'
+
+            def set_random_melee_boots_armor(self, armor_type=None):
+                material = random.choice(armor.melee_materials)
+                if armor_type is None:
+                    armor_type = random.choice(armor.melee_boots)
+                elif armor_type.lower() in armor.melee_boots:
+                    pass
+                else:
+                    print('\nInvalid type of boots armor')
+                    valid_types = ' \n'.join(str(types) for types in armor.melee_boots)
+                    print(f'Valid types:\n{valid_types}.title()')
+                    return
+
+                self.__name = str(f'{material} {armor_type}')
+                return self.__name
+
+            def set_custom_melee_boots_armor(self):
+                material = str(input(f'Select a material: '))
+                armor_type = str(input(f'Select a boots armor: '))
+                if material.lower() in armor.melee_materials:
+                    pass
+                else:
+                    print('\nInvalid component')
+                    valid_types = ' \n'.join(str(materials) for materials in armor.melee_materials)
+                    print(f'Valid components:\n{valid_types}.title()')
+                    return
+
+                if armor_type.lower() in armor.melee_boots:
+                    pass
+                else:
+                    print('\nInvalid type of boots armor')
+                    valid_types = ' \n'.join(str(types) for types in armor.melee_boots)
+                    print(f'Valid types:\n{valid_types}.title()')
+                    return
+                self.__name = str(f'{material} {armor_type}')
+                return self.__name.title()
+
+        class Shields:
+            def __init__(self, name=None):
+                self.__name = name.title()
+                self.item_type = 'shields armor'
+
+            def set_random_melee_shields_armor(self, armor_type=None):
+                material = random.choice(armor.shield_materials)
+                if armor_type is None:
+                    armor_type = random.choice(armor.shield_types)
+                elif armor_type.lower() in armor.shield_types:
+                    pass
+                else:
+                    print('\nInvalid type of shields armor')
+                    valid_types = ' \n'.join(str(types) for types in armor.shield_types)
+                    print(f'Valid types:\n{valid_types}.title()')
+                    return
+
+                self.__name = str(f'{material} {armor_type}')
+                return self.__name
+
+            def set_custom_melee_shields_armor(self):
+                material = str(input(f'Select a material: '))
+                armor_type = str(input(f'Select a shields armor: '))
+                if material.lower() in armor.shield_materials:
+                    pass
+                else:
+                    print('\nInvalid component')
+                    valid_types = ' \n'.join(str(materials) for materials in armor.shield_materials)
+                    print(f'Valid components:\n{valid_types}.title()')
+                    return
+
+                if armor_type.lower() in armor.shield_types:
+                    pass
+                else:
+                    print('\nInvalid type of shields armor')
+                    valid_types = ' \n'.join(str(types) for types in armor.shield_types)
+                    print(f'Valid types:\n{valid_types}.title()')
+                    return
+                self.__name = str(f'{material} {armor_type}')
+                return self.__name.title()
 
     class Food:
         def __init__(self, name=None):
-            self._name = name.title()
+            self.__name = name.title()
             self.item_type = 'Food'
